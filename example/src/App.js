@@ -1,13 +1,66 @@
-import React, { Component } from 'react'
+import React from "react";
+import styled, { ThemeProvider } from "styled-components";
 
-import ExampleComponent from 'styled-responsive-props'
+import { responsiveProp, useTheme } from "styled-responsive-props";
 
-export default class App extends Component {
-  render () {
-    return (
-      <div>
-        <ExampleComponent text='Modern React component module' />
-      </div>
-    )
+const theme = {
+  breakpoints: {
+    mobile: 320,
+    tablet: 768,
+    desktop: 1024,
+    large: 1600
   }
-}
+};
+
+const Frame = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  ${responsiveProp(["flex-direction", "direction", ["column", [600, "row"]]])}
+`;
+
+const Base = styled.div`
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+`;
+
+const A = styled(Base)`
+  ${responsiveProp(["background", "bg", "yellow"])};
+`;
+const B = styled(Base)`
+  ${responsiveProp(["background", "bg"])};
+`;
+const C = styled(Base)`
+  ${responsiveProp(["background", "bg", "pink"])};
+`;
+
+const D = styled(Base)`
+  ${responsiveProp([
+  "background",
+  "bg",
+  ["red", [200, "green"], [500, "cyan"]]
+])};
+`;
+
+const E = styled(Base)`
+  ${responsiveProp(["background", "bg", "gray"])};
+`;
+
+const Main = () => (
+  <Frame>
+    <A bg={["red", [200, "purple"], "blue"]} />
+    <B bg="green" />
+    <C bg={[[200, "orange"]]} />
+    <D bg="black" />
+    <E bg={[[768, "red"]]} />
+  </Frame>
+);
+
+export default () => (
+  <ThemeProvider theme={theme}>
+    <Main />
+  </ThemeProvider>
+);
