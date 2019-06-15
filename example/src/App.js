@@ -55,7 +55,7 @@ const Main = () => (
     <B bg="green" />
     <C bg={[[200, "orange"]]} />
     <D bg="black" />
-    <E bg={[[768, "red"]]} />
+    <E bg={[[useTheme('breakpoints.tablet'), "red"]]} />
   </Frame>
 );
 

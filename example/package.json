@@ -6,8 +6,8 @@
   "private": true,
   "dependencies": {
     "prop-types": "^15.6.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "link:../node_modules/react",
+    "react-dom": "link:../node_modules/react-dom",
     "react-scripts": "^1.1.4",
     "styled-components": "^4.2.0",
     "styled-responsive-props": "link:.."
