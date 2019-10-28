@@ -12,18 +12,30 @@ npm install --save styled-responsive-props
 
 ## Usage
 
+Register within styled component:
+`${responsiveProp([cssProp, reactProp, ?defaultValue])}`
+
+Use within render:
+`<Box direction={[?default, [minWidth, value, maxWidth]}>`
+
+Example:
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
+import styled from 'styled-components';
+import { responsiveProp } from "styled-responsive-props";
 
-import MyComponent from 'styled-responsive-props'
+const Box = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ${responsiveProp(["flex-direction", "direction"])}
+`;
 
-class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
-}
+const Example = ({ children }) => (
+  <Box direction={["column", [1024, "row"]}>
+    {children}
+  </Box>
+)
 ```
 
 ## License
