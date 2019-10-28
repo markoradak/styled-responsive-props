@@ -13,10 +13,14 @@ npm install --save styled-responsive-props
 ## Usage
 
 Register within styled component:
-`${responsiveProp([cssProp, reactProp, ?defaultValue])}`
+```jsx
+${responsiveProp([cssProp, reactProp, ?defaultValue])}
+```
 
 Use within render:
-`<Box direction={[?default, [minWidth, value, maxWidth]}>`
+```jsx
+<Box direction={[?default, [minWidth, value, maxWidth]}>
+```
 
 Example:
 ```jsx
