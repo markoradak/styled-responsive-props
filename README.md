@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save styled-responsive-props
+npm install --save @markoradak/styled-responsive-props
 ```
 
 ## Usage
