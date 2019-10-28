@@ -59,13 +59,4 @@ export const responsiveProp = props => setResponsiveProp(props)
 export const responsiveProps = props => props.map(prop => responsiveProp(prop))
 
 export const useTheme = () => useContext(ThemeContext) || {}
-export const useBreakpoint = () => useContext(ThemeContext).breakpoints || {}
-
-export const useBreakpoint = breakpoint => {
-  let breakpoints = useTheme('breakpoints')
-  breakpoints =
-    isNumber(breakpoint) && isObject(breakpoints)
-      ? Object.values(breakpoints)
-      : breakpoints
-  return breakpoints[breakpoint]
-}
+export const useBreakpoints = () => useContext(ThemeContext).breakpoints || {}

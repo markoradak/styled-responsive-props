@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 
-import { responsiveProp, useTheme } from "styled-responsive-props";
+import { responsiveProp, useTheme, useBreakpoints } from "styled-responsive-props";
 
 const theme = {
   breakpoints: {
@@ -55,7 +55,7 @@ const Main = () => (
     <B bg="green" />
     <C bg={[[200, "orange"]]} />
     <D bg="black" />
-    <E bg={[[useTheme('breakpoints.tablet'), "red"]]} />
+    <E bg={[[useBreakpoints().tablet, "red"]]} />
   </Frame>
 );
 
