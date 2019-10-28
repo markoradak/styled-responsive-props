@@ -1,4 +1,4 @@
-# styled-responsive-props
+# 📏 styled-responsive-props
 
 > Intuitive responsive props system for styled components.
 
